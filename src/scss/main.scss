@@ -1,0 +1,113 @@
+@import "./reset";
+
+html {
+  --primary: #141414;
+  --secondary: #828282;
+  --background: #ffffff;
+  --spacing: 8px;
+
+  @media (min-width: 960px) {
+    --spacing: 16px;
+  }
+}
+
+[data-theme="dark"] {
+  --primary: #ffffff;
+  --secondary: #aaaaaa;
+  --background: #141414;
+}
+
+body {
+  display: grid;
+
+  margin: var(--spacing);
+
+  text-transform: uppercase;
+
+  color: var(--primary);
+  background-color: var(--background);
+
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  line-height: 14px;
+
+  gap: 20px;
+  grid-template-columns: minmax(175px, 1fr) 1fr;
+  grid-template-areas:
+    "h1 h2"
+    "toggle p";
+
+  @media (min-width: 960px) {
+    grid-template-columns: minmax(175px, 1fr) 2fr 3fr 10px;
+    grid-template-areas: "h1 h2 p toggle";
+  }
+}
+
+h1 {
+  grid-area: h1;
+
+  &:before {
+    display: block;
+
+    content: "(Name)";
+
+    color: var(--secondary);
+  }
+}
+
+h2 {
+  grid-area: h2;
+
+  &:before {
+    display: block;
+
+    content: "(Information)";
+
+    color: var(--secondary);
+  }
+}
+
+p {
+  grid-area: p;
+
+  &:before {
+    display: block;
+
+    content: "(Applicants)";
+
+    color: var(--secondary);
+  }
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
+
+  color: inherit;
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  font: inherit;
+
+  grid-area: toggle;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & + svg {
+    position: absolute;
+    bottom: var(--spacing);
+    left: var(--spacing);
+  }
+}
+
+svg {
+  fill: var(--primary);
+}

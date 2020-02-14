@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tumult</title>
+    <meta
+      name="description"
+      content="A invitation only freelance network for creatives"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="./assets/tumult.svg" />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./scss/main.scss" />
+  </head>
+
+  <body>
+    <h1>Tumult</h1>
+    <h2>
+      A invitation only freelance network for creatives/<br />
+      Established 2020 in Sthlm, Swe.<br />
+      ©
+    </h2>
+    <p>Closed for public access.</p>
+    <button class="toggle">
+      <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 0v10H0V0h10zM9 1H1v8l8-8z" />
+      </svg>
+    </button>
+
+    <svg width="175" height="197" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 98.5v-5.472c0-3.02 2.45-5.472 5.469-5.472H87.5V5.472C87.5 2.452 89.95 0 92.969 0h49.219a5.472 5.472 0 015.468 5.472v82.084H92.941A5.443 5.443 0 0087.5 93v5.5h10.938c26.977 0 48.88 21.714 49.216 48.626.257 20.83-12.868 39.028-32.255 46.62-5.868 2.296-11.528 3.227-16.962 3.224v.03H0v-54.722c0-3.02 2.45-5.472 5.469-5.472H82.03a5.472 5.472 0 005.469-5.473V98.5H0zm169.531-10.944A5.472 5.472 0 01175 93.028V98.5h-27.344V87.556z"
+        id="a"
+      />
+    </svg>
+    <script>
+      (function() {
+        var htmlTag = document.body.parentNode;
+        var toggle = document.querySelector(".toggle");
+
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          htmlTag.setAttribute("data-theme", "dark");
+        }
+
+        toggle.addEventListener("click", function() {
+          htmlTag.getAttribute("data-theme") === "dark"
+            ? htmlTag.setAttribute("data-theme", "light")
+            : htmlTag.setAttribute("data-theme", "dark");
+        });
+      })();
+    </script>
+  </body>
+</html>
