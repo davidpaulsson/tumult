@@ -28,8 +28,9 @@ body {
   background-color: var(--background);
 
   font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 14px;
+  letter-spacing: 0.25px;
 
   gap: 20px;
   grid-template-columns: minmax(175px, 1fr) 1fr;
